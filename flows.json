@@ -1,0 +1,78 @@
+[
+    {
+        "id": "b98392cab549011a",
+        "type": "subflow",
+        "name": "cowsay",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "9b62f2a2ea41271e"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 340,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "9b62f2a2ea41271e",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {
+            "module": "node-red-contrib-cowsay0125",
+            "type": "cowsay",
+            "version": "0.0.1",
+            "author": "Kazuhito Yokoi <kazuhitoyokoi@example.com>",
+            "desc": "A node to generate ascii art using cowsay module",
+            "keywords": "node-red,cowsay",
+            "license": "Apache-2.0"
+        },
+        "color": "#DDAA99"
+    },
+    {
+        "id": "9b62f2a2ea41271e",
+        "type": "function",
+        "z": "b98392cab549011a",
+        "name": "function 1",
+        "func": "msg.payload = cowsay2.say(String(msg.payload));\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "cowsay2",
+                "module": "cowsay2"
+            }
+        ],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4f33e9772263df5",
+        "type": "subflow:b98392cab549011a",
+        "z": "26970429d1c1f2e1",
+        "name": "",
+        "x": 280,
+        "y": 320,
+        "wires": [
+            [
+                "6ad35c3f5d7a5a1d"
+            ]
+        ]
+    }
+]
